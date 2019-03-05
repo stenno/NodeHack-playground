@@ -1,0 +1,8 @@
+@import 'variables';
+
+main {
+  font-family: $main-font;
+  grid-area: main;
+  background-color: $color5;
+  color: $color1;
+}

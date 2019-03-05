@@ -1,0 +1,17 @@
+@import 'variables';
+
+body {
+  margin: 0;
+}
+
+#root {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 10% 40% 40% 10%;
+  grid-template-rows: 20% 35% 35% 10%;
+  grid-template-areas:
+    "header header header header"
+    ". main main ."
+    ". main main ."
+    "footer footer footer footer";
+}
