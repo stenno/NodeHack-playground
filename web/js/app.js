@@ -20,5 +20,4 @@ class App extends Component {
 }
 
 const rootEl = document.querySelector('#root');
-console.log('got root el', rootEl);
 ReactDOM.render(<App />, rootEl);
