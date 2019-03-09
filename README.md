@@ -11,7 +11,7 @@ Before using, consider the following *important* points:
 
 1. NodeHack-playground is a only a quick and dirty demonstration of NodeHacks capabilities. It doesn't have sufficient security mechanisms. Make sure to *always* run NodeHack-playground on localhost with restricted permissions and to *never* expose an instance to the Internet. Malicious (or buggy) input could probably lead to arbitrary code execution.
 2. NodeHack is still in development. Bugs in the code might kill characters and sessions. Consider any game or session pontentially lost. It is recommended to create throwaway accounts for use with NodeHack.
-3. NodeHack characters should use the recommended [.nethackrc](https://github.com/stenno/nodehack/.nethackrc).
+3. NodeHack characters should use the recommended [.nethackrc](https://github.com/stenno/NodeHack/blob/master/.nethackrc).
 4. NodeHack cannot do character creation yet. Therefore it expects an already running game when connecting.
 
 ---
@@ -20,7 +20,7 @@ git, node and npm should be installed. It is recommended to use `nvm` to manage 
 
 Clone the NodeHack-playground repository and install it.
 
-`$ git clone https://github.com/stenno/NodeHack-playground.git`
+`$ git clone https://github.com/stenno/NodeHack-playground.git`  
 `$ npm install`
 
 Compile the resources:
