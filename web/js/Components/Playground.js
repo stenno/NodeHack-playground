@@ -56,7 +56,9 @@ export default class Playground extends React.Component {
     const numScreens = screens.length;
     return (
       <main>
-        <Screen data={ currentScreen } />
+        { running && 
+          <Screen data={ currentScreen } />
+        }
         <Login running={ running } login={ this.login } logout={ this.logout } />
         <Controls 
           currentScreen={ currentScreenIndex }
