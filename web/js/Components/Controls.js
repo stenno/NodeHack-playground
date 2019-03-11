@@ -4,38 +4,32 @@ export default class Controls extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: ''
+      newIndex: -1
     };
-    this.handleUsername = this.handleUsername.bind(this);
-    this.handlePassword = this.handlePassword.bind(this);
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.handleNewIndex = this.handleNewIndex.bind(this);
+    this.handlePageJumpClick = this.handlePageJumpClick.bind(this);
   }
 
-  handleUsername(event) {
-    this.setState({ username: event.target.value });
+
+
+  handleNewIndex(event) {
+    this.setState({ newIndex: event.target.value });
   }
-  handlePassword(event) {
-    this.setState({ password: event.target.value });
-  }
-  handleLoginClick() {
-    const { username, password } = this.state;
-    this.props.login(username, password);
-  }
-  handleLogoutClick() {
-    console.log('calling handleLogoutClick');
-    this.props.logout();
+  handlePageJumpClick(event) {
+    this.props.setCurrentScreen(+this.state.newIndex - 1);
   }
   render() {
-    const { login, logout } = this.props;
+    const { login, logout, running, currentScreen, numScreens } = this.props;
     return (
-      <form>
-        <input type='text' value={ this.state.username } onChange={ this.handleUsername } />
-        <input type='password' value={ this.state.password } onChange={ this.handlePassword } />
-        <button type='button' onClick={ this.handleLoginClick }>Login</button>
-        <button type='button' onClick={ this.handleLogoutClick }>Logout</button>
-      </form>
+      <div class='controls'>
+        <span class='running-indicator'>Running: {running ? 'yes' : 'no'}</span>
+        <span class='screen-index'>Current screen: {currentScreen + 1}/{numScreens}</span>
+        <form>
+          <label htmlFor="newIndex">Jump to screen:</label>
+          <input name="newIndex" type='text' value={this.state.newIndex} onChange={this.handleNewIndex} />
+          <button type='button' onClick={ this.handlePageJumpClick }>Jump</button>
+        </form>
+      </div> 
     );
   }
 }
