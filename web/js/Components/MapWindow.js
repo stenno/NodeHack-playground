@@ -5,8 +5,8 @@ export default class MapWindow extends React.Component {
     super(props);
   }
   render() {
-    const { glyphs } = this.props.currentMap;
-    console.log('map window got glyphs', glyphs);
+    const { glyphs, data } = this.props.currentMap;
+    console.log('data', data);
     const objectGlyphs = glyphs.filter(glyph => glyph.data.section === 'objects');
     const monsterGlyphs = glyphs.filter(glyph => glyph.data.section === 'monsters');
     const objects = objectGlyphs.map(glyph => {
