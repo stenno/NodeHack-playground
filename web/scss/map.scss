@@ -1,0 +1,20 @@
+.map-container {
+  .map {
+    display: inline-block;
+    list-style-type: none;
+    .row ul {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      .cell {
+        min-width: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .currentGlyphContainer {
+    vertical-align: top;
+    display: inline-block;
+  }
+}

@@ -7,11 +7,12 @@ body {
 #root {
   display: grid;
   height: 100vh;
+  width: 100vw;
   grid-template-columns: 10% 40% 40% 10%;
   grid-template-rows: 20% 35% 35% 10%;
   grid-template-areas:
     "header header header header"
-    ". main main ."
-    ". main main ."
+    "left main main right"
+    "left main main right"
     "footer footer footer footer";
 }
